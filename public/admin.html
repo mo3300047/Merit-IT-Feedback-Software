@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT 反馈后台</title>
+    <link rel="icon" type="image/png" href="/icons/logo.png">
+    <link rel="apple-touch-icon" href="/icons/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body data-page="admin">
+    <main class="page wide">
+      <section class="card hero">
+        <div class="hero-top">
+          <img class="brand-logo" src="/icons/full-logo.png" alt="Merit">
+          <div class="hero-actions">
+            <button class="language-toggle" type="button" data-language-toggle data-i18n="language.toggle">繁體</button>
+            <a class="admin-link" href="/" data-i18n="nav.back">返回提交页</a>
+          </div>
+        </div>
+        <p class="eyebrow" data-i18n="admin.eyebrow">Admin</p>
+        <h1 data-i18n="admin.heading">IT 反馈后台</h1>
+        <p class="hero-copy" data-i18n="admin.copy">输入管理员密码后查看全部软件需求反馈。</p>
+      </section>
+
+      <section class="card">
+        <div class="toolbar simple">
+          <label>
+            <span class="label-title" data-i18n="field.adminPassword">管理员密码</span>
+            <input id="password" type="password" autocomplete="current-password" placeholder="输入管理员密码" data-i18n-placeholder="placeholder.adminPassword">
+          </label>
+
+          <button id="loadTickets" type="button" data-i18n="button.load">查看全部需求</button>
+        </div>
+
+        <p id="adminMessage" class="message" role="status"></p>
+        <div id="tickets" class="tickets"></div>
+      </section>
+    </main>
+
+    <script src="/i18n.js"></script>
+    <script src="/admin.js"></script>
+  </body>
+</html>

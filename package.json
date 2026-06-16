@@ -1,0 +1,14 @@
+{
+  "name": "merit-it-feedback-software",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler pages dev public --d1 DB --persist-to .wrangler/state",
+    "db:migrate:local": "wrangler d1 migrations apply merit-it-feedback --local",
+    "db:migrate:remote": "wrangler d1 migrations apply merit-it-feedback --remote",
+    "deploy": "wrangler pages deploy public"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}

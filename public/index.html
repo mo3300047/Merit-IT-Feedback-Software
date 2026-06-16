@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT 需求反馈</title>
+    <link rel="icon" type="image/png" href="/icons/logo.png">
+    <link rel="apple-touch-icon" href="/icons/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body data-page="home">
+    <main class="page">
+      <section class="card hero">
+        <div class="hero-top">
+          <img class="brand-logo" src="/icons/full-logo.png" alt="Merit">
+          <div class="hero-actions">
+            <button class="language-toggle" type="button" data-language-toggle data-i18n="language.toggle">繁體</button>
+            <a class="admin-link" href="/admin.html" data-i18n="nav.admin">管理员入口</a>
+          </div>
+        </div>
+        <p class="eyebrow" data-i18n="home.eyebrow">IT Feedback</p>
+        <h1 data-i18n="home.heading">IT 需求反馈</h1>
+        <p class="hero-copy" data-i18n="home.copy">有软件开发、维护或其他系统相关需求，请在这里提交。IT 收到后会按优先级处理。</p>
+      </section>
+
+      <section class="card">
+        <form id="ticketForm">
+          <div class="grid">
+            <label>
+              <span class="label-title"><span data-i18n="field.category">需求类型</span> <strong data-i18n="required">*</strong></span>
+              <select name="category" required>
+                <option value="development" data-i18n="category.development">开发</option>
+                <option value="maintenance" data-i18n="category.maintenance">维护</option>
+                <option value="other" data-i18n="category.other">其他</option>
+              </select>
+            </label>
+
+            <label>
+              <span class="label-title"><span data-i18n="field.priority">优先级</span> <strong data-i18n="required">*</strong></span>
+              <select name="priority" required>
+                <option value="critical" data-i18n="priority.critical">极高</option>
+                <option value="medium" selected data-i18n="priority.medium">中等</option>
+                <option value="low" data-i18n="priority.low">较低</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span class="label-title"><span data-i18n="field.task">任务</span> <strong data-i18n="required">*</strong></span>
+            <input name="title" maxlength="120" required placeholder="例如：新增销售报表导出功能" data-i18n-placeholder="placeholder.task">
+          </label>
+
+          <label>
+            <span class="label-title"><span data-i18n="field.requester">反馈人</span> <strong data-i18n="required">*</strong></span>
+            <input name="requesterName" maxlength="80" required placeholder="填写你的名字" data-i18n-placeholder="placeholder.requester">
+          </label>
+
+          <label>
+            <span class="label-title" data-i18n="field.description">描述</span>
+            <textarea name="description" rows="7" maxlength="3000" placeholder="选填：补充需求背景、期望效果、相关页面或具体例子" data-i18n-placeholder="placeholder.description"></textarea>
+          </label>
+
+          <button type="submit" data-i18n="button.submit">提交反馈</button>
+          <p id="message" class="message" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/i18n.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

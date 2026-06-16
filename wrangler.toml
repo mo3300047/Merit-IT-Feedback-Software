@@ -1,0 +1,7 @@
+name = "merit-it-feedback"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "merit-it-feedback"
+database_id = "c030e0a7-fbc3-4155-bf0a-020a2263d81b"
