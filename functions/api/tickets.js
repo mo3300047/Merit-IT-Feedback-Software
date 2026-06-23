@@ -41,6 +41,7 @@ async function ensureTicketsTable(db) {
       contact TEXT,
       category TEXT NOT NULL DEFAULT 'other',
       priority TEXT NOT NULL DEFAULT 'medium',
+      progress INTEGER NOT NULL DEFAULT 0,
       description TEXT NOT NULL,
       status TEXT NOT NULL DEFAULT 'new',
       resolution_notes TEXT,
@@ -48,6 +49,12 @@ async function ensureTicketsTable(db) {
       updated_at TEXT NOT NULL DEFAULT (datetime('now'))
     )
   `).run();
+
+  const columns = await db.prepare("PRAGMA table_info(tickets)").all();
+  const hasProgress = (columns.results || []).some((column) => column.name === "progress");
+  if (!hasProgress) {
+    await db.prepare("ALTER TABLE tickets ADD COLUMN progress INTEGER NOT NULL DEFAULT 0").run();
+  }
 
   await db.prepare("CREATE INDEX IF NOT EXISTS idx_tickets_status ON tickets(status)").run();
   await db.prepare("CREATE INDEX IF NOT EXISTS idx_tickets_created_at ON tickets(created_at)").run();
@@ -61,10 +68,10 @@ export async function onRequestGet({ request, env }) {
   await ensureTicketsTable(env.DB);
 
   const sql = `
-    SELECT id, title, requester_name, department, contact, category, priority,
+    SELECT id, title, requester_name, department, contact, category, priority, progress,
       description, status, resolution_notes, created_at, updated_at
     FROM tickets
-    ORDER BY datetime(created_at) DESC
+    ORDER BY datetime(created_at) ASC
     LIMIT 200
   `;
 

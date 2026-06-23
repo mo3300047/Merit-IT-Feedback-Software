@@ -31,6 +31,7 @@ const TRANSLATIONS = {
     "button.submit": "提交反馈",
     "button.load": "查看全部需求",
     "button.delete": "完成并删除",
+    "progress.label": "任务进度",
     "message.submitting": "正在提交...",
     "message.submitFailed": "提交失败，请稍后再试",
     "message.submitSuccess": "提交成功，需求编号：#{id}",
@@ -43,6 +44,9 @@ const TRANSLATIONS = {
     "message.deleting": "正在删除...",
     "message.deleteFailed": "删除失败",
     "message.deleted": "#{id} 已删除",
+    "message.savingProgress": "正在保存进度...",
+    "message.progressSaved": "#{id} 进度已更新为 {progress}%",
+    "message.progressSaveFailed": "保存进度失败",
     "confirm.delete": "确认删除这条需求吗？\n\n#{id} {title}",
     "meta.createdAt": "提交时间"
   },
@@ -78,6 +82,7 @@ const TRANSLATIONS = {
     "button.submit": "提交反饋",
     "button.load": "查看全部需求",
     "button.delete": "完成並刪除",
+    "progress.label": "任務進度",
     "message.submitting": "正在提交...",
     "message.submitFailed": "提交失敗，請稍後再試",
     "message.submitSuccess": "提交成功，需求編號：#{id}",
@@ -90,6 +95,9 @@ const TRANSLATIONS = {
     "message.deleting": "正在刪除...",
     "message.deleteFailed": "刪除失敗",
     "message.deleted": "#{id} 已刪除",
+    "message.savingProgress": "正在儲存進度...",
+    "message.progressSaved": "#{id} 進度已更新為 {progress}%",
+    "message.progressSaveFailed": "儲存進度失敗",
     "confirm.delete": "確認刪除這條需求嗎？\n\n#{id} {title}",
     "meta.createdAt": "提交時間"
   }

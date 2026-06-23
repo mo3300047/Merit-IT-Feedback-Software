@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS tickets (
   contact TEXT,
   category TEXT NOT NULL DEFAULT 'other',
   priority TEXT NOT NULL DEFAULT 'medium',
+  progress INTEGER NOT NULL DEFAULT 0,
   description TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'new',
   resolution_notes TEXT,
